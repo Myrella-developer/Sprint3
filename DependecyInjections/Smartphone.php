@@ -1,9 +1,8 @@
 <?php
-require_once 'SmartphoneInterface.php';
 
-class Smartphone implements SmartphoneInterface {
+class Smartphone {
     public function getSmartphone() {
-        return "Smartphone --> Hecho";
+        return "Smartphone --> Hecho <br>";
     }
 }
 ?>

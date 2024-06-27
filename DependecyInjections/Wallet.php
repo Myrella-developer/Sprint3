@@ -1,10 +1,8 @@
 <?php
-require_once 'walletInterface.php';
 
-class Wallet implements WalletInterface {
+class Wallet  {
     public function getWallet() {
-        return "Cartera --> Hecho";
+        return "Cartera --> Hecho <br>";
     }
 }
 ?>
-

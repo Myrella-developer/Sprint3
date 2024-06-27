@@ -1,8 +1,8 @@
 <?php
-require_once 'WalletInterface.php';
-require_once 'HomeKeysInterface.php';
-require_once 'CarKeysInterface.php';
-require_once 'SmartphoneInterface.php';
+require_once 'Wallet.php';
+require_once 'HomeKeys.php';
+require_once 'CarKeys.php';
+require_once 'Smartphone.php';
 
 class Persona {
     private $wallet;
@@ -11,10 +11,10 @@ class Persona {
     private $smartphone;
 
     public function __construct(
-        WalletInterface $wallet,
-        HomeKeysInterface $homeKeys,
-        CarKeysInterface $carKeys = null,
-        SmartphoneInterface $smartphone
+        Wallet $wallet,
+        HomeKeys $homeKeys,
+        CarKeys $carKeys = null,
+        Smartphone $smartphone
     ) {
         $this->wallet = $wallet;
         $this->homeKeys = $homeKeys;
@@ -23,12 +23,31 @@ class Persona {
     }
 
     public function getReadyForTheDay() {
-        echo $this->wallet->getWallet() . PHP_EOL;
-        echo $this->homeKeys->getHomeKeys() . PHP_EOL;
+
+        echo "GET READY FOR TODAY:<br>";
+        if ($this->wallet !== null) {
+            echo $this->wallet->getWallet() . PHP_EOL;
+        } else {
+            echo "!No llevas la Cartera¡<br>";
+        }
+    
+        if ($this->homeKeys !== null) {
+            echo $this->homeKeys->getHomeKeys() . PHP_EOL;
+        } else {
+            echo "!No llevas las Llaves de la Casa¡<br>";
+        }
+    
         if ($this->carKeys !== null) {
             echo $this->carKeys->getCarKeys() . PHP_EOL;
+        } else {
+            echo "!No llevas las Llaves del Coche¡<br>";
         }
-        echo $this->smartphone->getSmartphone() . PHP_EOL;
+    
+        if ($this->smartphone !== null) {
+            echo $this->smartphone->getSmartphone() . PHP_EOL;
+        } else {
+            echo "!No llevas el Teléfono¡<br>";
+        }
     }
     
 }

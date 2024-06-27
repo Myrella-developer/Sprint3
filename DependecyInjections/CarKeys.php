@@ -1,9 +1,7 @@
 <?php
-require_once 'CarKeysInterface.php';
-
-class CarKeys implements CarKeysInterface {
-    public function getCarKeys() {
-        return "Claves del coche --> Hecho";
-    }
+    class CarKeys {
+        public function getCarKeys() {
+            return "Llaves del coche --> Hecho <br>";
+        }
 }
 ?>

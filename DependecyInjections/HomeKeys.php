@@ -1,10 +1,7 @@
 <?php
-require_once 'HomeKeysInterface.php';
-
-    Class homeKeys implements homeKeysInterface{
+    Class homeKeys {
         public function getHomeKeys(){
-            return "Llaves de casa --> Hecho.";
+            return "Llaves de Casa --> Hecho <br>";
         }
     }
-
 ?>
