@@ -9,7 +9,7 @@
             echo "Building character..." . PHP_EOL;
         }
 
-        public static function getInstance() {
+        public static function getInstance() :Tigger{
             if(self::$uniqueInstance === null){
                 self::$uniqueInstance = new Tigger();
             }
@@ -25,4 +25,16 @@
             return self::$counter;
         }
     }
+        $tigger = Tigger::getInstance();
+
+        $tigger->roar();
+        $tigger->roar();
+        $tigger->roar();
+        $tigger->roar();
+        
+        $tigger->getCounter();
+    
+        echo "Roars: " . Tigger::getCounter() . PHP_EOL;
+
+    
 ?>
