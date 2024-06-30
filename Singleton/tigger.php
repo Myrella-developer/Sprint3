@@ -27,10 +27,9 @@
     }
         $tigger = Tigger::getInstance();
 
-        $tigger->roar();
-        $tigger->roar();
-        $tigger->roar();
-        $tigger->roar();
+        for($i = 0; $i < 6; $i++){
+            $tigger->roar();
+        }
         
         $tigger->getCounter();
     
